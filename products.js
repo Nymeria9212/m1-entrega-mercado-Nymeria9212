@@ -134,11 +134,11 @@ function criarItem(lista) {
   tagH5 = document.createElement('h5')
   tagStrong = document.createElement('strong')
   tagImage = document.createElement('img')
-  tagDiv = document.createElement('div')
+  tagMain = document.createElement('main')
 
 
   tagLi.classList.add('product')
-  tagDiv.classList.add('product-main')
+  tagMain.classList.add('product-main')
   tagH1.classList.add('product-title')
   tagH5.classList.add('product-category')
   tagStrong.classList.add('product-price')
@@ -149,8 +149,8 @@ function criarItem(lista) {
   tagStrong.innerText = precoProduto
   tagImage.src = `${imagemProduto}`
 
-  tagDiv.append(tagH1, tagH5, tagStrong)
-  tagLi.append(tagImage, tagDiv)
+  tagMain.append(tagH1, tagH5, tagStrong)
+  tagLi.append(tagImage, tagMain)
 
   return tagLi
 }
@@ -174,14 +174,14 @@ titleDrinks.innerText='Bebidas'
 titleFrutas.innerText="Frutas"
 titleHigiene.innerText='Higiene'
 
-let divFrutas= document.createElement('div')
-divFrutas.classList.add('products-content', 'fruits')
+let mainFrutas= document.createElement('main')
+mainFrutas.classList.add('products-content', 'fruits')
 
-let divDrinks= document.createElement('div')
-divDrinks.classList.add('products-content', 'drinks')
+let mainDrinks= document.createElement('main')
+mainDrinks.classList.add('products-content', 'drinks')
 
-let divHigiene=document.createElement('div')
-divHigiene.classList.add('products-content', 'hygiene')
+let mainHigiene=document.createElement('main')
+mainHigiene.classList.add('products-content', 'hygiene')
 
 secaoFrutas.appendChild(titleFrutas)
 secaoHigiene.appendChild(titleHigiene)
@@ -201,9 +201,9 @@ function renderizaItens(lista, referenciaHtml, referencial2, referencial3){
   referencial2.appendChild(referenciaHtml)
   referencial3.appendChild(referencial2)
 }
-renderizaItens(frutas, listaFrutas, divFrutas, secaoFrutas)
-renderizaItens(bebidas, listaDrinks, divDrinks, secaoDrinks)
-renderizaItens(higiene, listaHigiene, divHigiene, secaoHigiene)
+renderizaItens(frutas, listaFrutas, mainFrutas, secaoFrutas)
+renderizaItens(bebidas, listaDrinks, mainDrinks, secaoDrinks)
+renderizaItens(higiene, listaHigiene, mainHigiene, secaoHigiene)
 
 
 
